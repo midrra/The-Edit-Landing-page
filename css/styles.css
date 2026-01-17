@@ -31,10 +31,6 @@ body {
 
 .logo {
   width: 150px;
-  /* font-size: 16px;
-  font-weight: 700;
-  color: #fff;
-  letter-spacing: -0.5px; */
 }
 .logo img {
   width: 100%;
@@ -44,7 +40,8 @@ body {
 /* Hero Section */
 .hero {
   height: 100vh;
-  background: url("../image/hero.png");
+  background: url("../image/Slider-1.jpg");
+  /* background: url("../image/hero.png"); */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -58,12 +55,16 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 60px;
+  font-family: "Inter", sans-serif;
+  font-weight: 300;
+  color: black;
 }
 
 .title-block h1 {
   font-size: 2.5rem;
   font-weight: 400;
   margin-bottom: 10px;
+  font-weight: 300;
 }
 
 .info-grid {
@@ -77,6 +78,8 @@ body {
   align-items: center;
   gap: 5px;
   font-size: 1.1rem;
+}
+.info-item .solid {
   color: #444;
 }
 
@@ -104,26 +107,33 @@ body {
 .description-block p {
   font-size: 1rem;
   line-height: 1.6;
-  color: #333;
   margin-bottom: 25px;
   width: 100%;
 }
 
 .btn-visit {
-  padding: 18px 20px;
+  padding: 15px 20px;
   background: black;
   color: white;
   border: none;
   border-radius: 30px;
-  font-size: 1rem;
+  font-size: 14px;
   font-weight: 500;
   cursor: pointer;
-  transition: 0.3s;
 }
-
-.btn-visit:hover {
-  background: #333;
-  transform: translateY(-2px);
+.btn-visit a{
+  text-decoration: none;
+  color: white;
+}
+.fa-arrow-right{
+  transition:all 0.6s ease;
+  opacity: 0;
+  display: none
+}
+.btn-visit:hover .fa-arrow-right{
+  margin-left: 8px;
+  opacity: 1;
+  display: inline;
 }
 
 @media (max-width: 878px) {
@@ -157,7 +167,11 @@ body {
 }
 
 /* --- CAROUSEL CONTAINER --- */
+.carousel {
+  overflow: hidden;
+}
 .carousel-main-container {
+  margin: 0 20px;
   display: flex;
   height: 80vh;
   width: 100%;
@@ -199,7 +213,7 @@ body {
 }
 .text-slide p {
   font-size: 0.95rem;
-  color: #ccc;
+  color: #fff;
   line-height: 1.5;
   margin-bottom: 25px;
   width: 80%;
@@ -287,11 +301,16 @@ body {
 }
 
 .about-content .left h1 {
-  font-size: 20px;
+  font-size: 18px;
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  color: black;
 }
 .about-content .left p {
   font-size: 30px;
-  font-weight: 400;
+  font-family: "Inter", sans-serif;
+  font-weight: 300;
+  color: black;
 }
 .about-link {
   text-decoration: none;
@@ -303,6 +322,9 @@ body {
   border: 1px solid black;
   cursor: pointer;
   transition: all 0.5s ease;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  color: black;
 }
 
 .about-content .right:hover .fa-download {
@@ -329,6 +351,8 @@ body {
 .about .discribe {
   font-size: 10px;
   margin-top: 20px;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
 }
 .mini-about-link .mini-right {
   display: none;
@@ -344,50 +368,14 @@ body {
   .about-content .left p {
     font-size: 20px;
   }
-
-  /* .mini-about-link {
-    text-decoration: none;
-  }
-  .mini-about-link .mini-right {
-    display: inline;
-  }
-  .mini-about-link .mini-right button {
-    padding: 18px 20px;
-    width: 100%;
-    border-radius: 40px;
-    background-color: #fff;
-    border: 1px solid black;
-    cursor: pointer;
-    transition: all 0.5s ease;
-    display: inline;
-  }
-
- .mini-right:hover .fa-download {
-  opacity: 1;
-  transition: all 0.5s ease;
-}
-
-.mini-right{
-  position: relative;
-}
-.mini-right .fa-download {
-  position: absolute;
-  left: -50px;
-  color: gray;
-  opacity: 1;
-}
-
-.mini-right:hover button {
-  padding-right: 50px;
-  background-color: black;
-  color: #fff;
-} */
 }
 
 /* Features Section */
 .features {
   padding: 0 20px;
   margin-top: 100px;
+  font-family: "Inter", sans-serif;
+  color: black;
 }
 .features-content {
   display: flex;
@@ -398,11 +386,12 @@ body {
 }
 
 .features-content .left h1 {
-  font-size: 20px;
+  font-size: 18px;
+  font-weight: 600;
 }
 .features-content .left p {
   font-size: 30px;
-  font-weight: 400;
+  font-weight: 300;
 }
 .about-link {
   text-decoration: none;
@@ -414,6 +403,7 @@ body {
   border: 1px solid black;
   cursor: pointer;
   transition: all 0.5s ease;
+  font-weight: 400;
 }
 
 .features-content .right:hover .fa-download {
@@ -424,7 +414,7 @@ body {
 .features-content .right .fa-download {
   position: relative;
   left: -50px;
-  color: gray;
+  color: #ccc;
   opacity: 0;
 }
 
@@ -556,15 +546,21 @@ body {
 .icons {
   margin-top: 50px;
   padding: 0 20px;
+   font-family: "Inter", sans-serif;
+   font-weight: 300;
 }
 .header-fr {
   font-size: 20px;
+  font-weight: 600;
+  color: black;
 }
 .header-title {
   font-size: 32px;
   font-weight: 300;
   margin-bottom: 60px;
   letter-spacing: -0.5px;
+  font-size: 600;
+  color: black;
 }
 
 .amenities-grid {
@@ -615,12 +611,16 @@ body {
 .location {
   padding: 0px 20px;
   margin-top: 170px;
+   font-family: "Inter", sans-serif;
+font-weight: 300;
 }
 .title-content {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   width: 100%;
+  color: black;
+  font-weight: 600;
 }
 .title-content .left {
   flex: 1;
@@ -636,6 +636,7 @@ body {
   font-weight: 400;
   margin-bottom: clamp(30px, 8vw, 60px);
   line-height: 1.2;
+  font-weight: 300;
 }
 
 .main-wrapper {
@@ -761,21 +762,30 @@ body {
 }
 
 /* Form */
-.form{
-padding: 0 20px;
+.form {
+  margin: 0 20px;
+  padding: 0 20px;
   background-color: #000;
-  padding-bottom:100px;
-  margin-top:200px
-
+  padding-bottom: 100px;
+  margin-top: 200px;
+    font-family: "Inter", sans-serif;
+    font-weight: 300;
 }
-.form h1{
+.form h1 {
   color: #fff;
   padding-top: 80px;
-  font-size: 20px;
+  font-size: 14px;
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
 }
-.form h2{
+.form h2 {
   color: #fff;
-  margin-bottom: 40px;
+  margin-bottom: 50px;
+  font-family: "Inter", sans-serif;
+  font-weight: 300;
+  font-size: 35px;
 }
 .form-container {
   max-width: 1000px;
@@ -799,17 +809,15 @@ select {
   background: #fff;
   color: #333;
   outline: none;
-
-
 }
-select{
+select {
   padding-right: 36px;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'%3E%3C/path%3E%3C/svg%3E");
-    background-repeat: no-repeat;
-    background-position: calc(100% - 20px) center;
-    background-size: 15px;
-    cursor: pointer;
-        appearance: none;
+  background-repeat: no-repeat;
+  background-position: calc(100% - 20px) center;
+  background-size: 15px;
+  cursor: pointer;
+  appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
 }

@@ -1,4 +1,3 @@
-      // Initialize Text Swiper
       const textSwiper = new Swiper(".swiper-text", {
         effect: "fade",
         fadeEffect: { crossFade: true },
@@ -7,7 +6,6 @@
         allowTouchMove: false,
       });
 
-      // Initialize Photo Swiper
       const photoSwiper = new Swiper(".swiper-photo", {
         slidesPerView: 2,
         spaceBetween: 20,
@@ -52,13 +50,6 @@
 
       function handleTabClick(clickedBtn) {
         const allButtons = document.querySelectorAll(".tab-btn");
-        if (isCollapsed && clickedBtn.classList.contains("active")) {
-          allButtons.forEach((btn) => {
-            btn.classList.remove("hidden");
-            btn.style.visibility = "visible";
-          });
-          isCollapsed = false;
-        } else {
           const img = document.getElementById("main-plan-img");
           const text = document.getElementById("area-text");
           img.style.opacity = "0";
@@ -74,18 +65,11 @@
 
           allButtons.forEach((btn) => {
             btn.classList.remove("active");
-            if (btn !== clickedBtn) {
-              btn.classList.add("hidden");
-              // Use visibility to ensure the space is fully cleared instantly
-              setTimeout(() => {
-                if (isCollapsed) btn.style.visibility = "hidden";
-              }, 500);
-            }
           });
 
           clickedBtn.classList.add("active");
           isCollapsed = true;
-        }
+        
       }
 
     // <!-- Location script -->
@@ -114,8 +98,7 @@
 
 //Forms
     
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbxbc1GbakB72rwmwDWgMlHhTE1S9UEKq1dhzwC8tZcBGL85tzFTJKfI7G57ek4eZHm30g/exec'; 
-    
+    const scriptURL =  'https://script.google.com/macros/s/AKfycbyDtzWhxVUM4QFo9at7043SzCe3oUFi_cdNwHp8asOJJdIz_7AJqFrPmmjtBChrTriv/exec'
     const form = document.getElementById('registrationForm');
     const btnText = document.getElementById('btnText');
 
@@ -127,8 +110,6 @@
       
       const formData = new FormData(form);
       const data = Object.fromEntries(formData.entries());
-      console.log(data,"the sending data")
-
         fetch(scriptURL, {
             method: 'POST',
             mode: 'no-cors', 
@@ -136,7 +117,7 @@
             headers: { 'Content-Type': 'application/json' }
         })
         .then(() => {
-            console.log("Request sent");
+          
         })
         .catch(err => console.error("Error:", err))
         .finally(() => {
